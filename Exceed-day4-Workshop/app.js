@@ -15,7 +15,7 @@ $(function () {
         });
     }, 1000)
 
-    $('#off-light-button').on('click', function () {
+    $('#off-light-out-button').on('click', function () {
         $.ajax({
             type: "POST",
             url: "http://ecourse.cpe.ku.ac.th:1515/api/odinpalm-outside_light/set/",
@@ -24,7 +24,7 @@ $(function () {
             },
             dataType: "json",
             success: function (response) {
-                $('#light').html('<img width="200" src="https://www.flaticon.com/premium-icon/icons/svg/595/595136.svg" alt="" class="rounded">')
+                $('#light-out').html('<img width="200" src="https://image.flaticon.com/icons/svg/149/149200.svg" alt="" class="rounded">')
             },
             fail: function (response) {
                 console.log(response);
@@ -32,8 +32,7 @@ $(function () {
 
         });
     })
-    $('#on-light-button').on('click', function () {
-
+    $('#on-light-out-button').on('click', function () {
         $.ajax({
             type: "POST",
             url: "http://ecourse.cpe.ku.ac.th:1515/api/odinpalm-outside_light/set/",
@@ -42,7 +41,7 @@ $(function () {
             },
             dataType: "json",
             success: function (response) {
-                $('#light').html('<img width="200" src="https://www.flaticon.com/premium-icon/icons/svg/595/595085.svg" alt="" class="rounded">')
+                $('#light-out').html('<img width="200" src="https://image.flaticon.com/icons/png/512/148/148819.png" alt="" class="rounded">')
             },
             fail: function (response) {
                 console.log(response);
@@ -51,7 +50,7 @@ $(function () {
         });
     })
 
-    $('#auto-light-button').on('click', function () {
+    $('#auto-light-out-button').on('click', function () {
 
         $.ajax({
             type: "POST",
@@ -61,6 +60,41 @@ $(function () {
             },
             dataType: "json",
             success: function (response) {
+            },
+            fail: function (response) {
+                console.log(response);
+            }
+
+        });
+    })
+
+    $('#off-light-in-button').on('click', function () {
+        $.ajax({
+            type: "POST",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/odinpalm-outside_light/set/",
+            data: {
+                value: 1
+            },
+            dataType: "json",
+            success: function (response) {
+                $('#light-in').html('<img width="200" src="https://image.flaticon.com/icons/svg/149/149200.svg" alt="" class="rounded">')
+            },
+            fail: function (response) {
+                console.log(response);
+            }
+
+        });
+    })
+    $('#on-light-in-button').on('click', function () {
+        $.ajax({
+            type: "POST",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/odinpalm-outside_light/set/",
+            data: {
+                value: 0
+            },
+            dataType: "json",
+            success: function (response) {
+                $('#light-in').html('<img width="200" src="https://image.flaticon.com/icons/png/512/148/148819.png" alt="" class="rounded">')
             },
             fail: function (response) {
                 console.log(response);
@@ -216,7 +250,7 @@ $(function () {
 window.onload = function () {
 
     var dps = []; // dataPoints
-    var chart = new CanvasJS.Chart("chartTemperature", {
+    var chart = new CanvasJS.Chart("chartTemperaturea", {
         title: {
             text: "Temperature Data"
         },

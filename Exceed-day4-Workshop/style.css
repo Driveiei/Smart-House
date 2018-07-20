@@ -1,25 +1,10 @@
 .box{
-    width: 300px;
-    height: 100px;
+    width: 200px;
+    height: 40px;
     margin: auto;
-    border: 2px solid #73AD21;
-
-}
-.light-frame{
-    margin-right: 80%
-}
-.air-frame{
-    margin-right: 55%
-}
-.title{
-    text-align: center;
-    margin-left: 32%;
-    margin-right: 32%;
-}
-.minititle{
-    text-align: center;
-    margin-left: 45%;
-    margin-right: 45%;
+    border: 2px solid #FED57B;
+    background: #FED57B;
+    
 }
 .center{
     text-align: center;
@@ -36,9 +21,16 @@
     margin: 40px;
 }
 body {
-    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    background: #B1EAF5
 }
 .light-graph{
     height: 25px;
     width: 600px;
+}
+.topic{
+    width: 300px;
+    height: 60px;
+    margin: auto;
+    border: 2px solid #FED57B;
+    background: #FED57B;
 }

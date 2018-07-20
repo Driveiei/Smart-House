@@ -15,50 +15,77 @@
 </head>
 
 <body>
-    <div class="title alert alert-primary" role="alert">
-        <h1>SmartHouse-Odin Palm</h1>
+    <div class="topic rounded">
+        <div style="color: rgb(252, 252, 252); " class="center">
+            <h1>Smart House</h1>
+        </div>
     </div>
     <br>
     <br>
-    <div class="container">
+    <div class="container center">
         <div class="row">
-            <div class="col-6 ">
-                <div id="light">
-                    <img width="200" src="https://www.flaticon.com/premium-icon/icons/svg/595/595085.svg" alt="" class="rounded">
+            <div class="col-12 col-md-6 ">
+                <div class="box rounded">
+                    <div style="color: rgb(252, 252, 252); " class="center">
+                        <h3>Outdoor Light</h3>
+                    </div>
+                </div>
+                <br>
+                <div id="light-out">
+                    <img width="200" src="https://image.flaticon.com/icons/png/512/148/148819.png" alt="" class="rounded">
                 </div>
                 <br>
                 <br>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button id="on-light-button" type="button" class="btn btn-secondary">On</button>
-                    <button id="off-light-button" type="button" class="btn btn-secondary">Off</button>
-                    <button id="auto-light-button" type="button" class="btn btn-secondary">Auto</button>
+                    <button id="on-light-out-button" type="button" class="btn btn-secondary">On</button>
+                    <button id="off-light-out-button" type="button" class="btn btn-secondary">Off</button>
+                    <button id="auto-light-out-button" type="button" class="btn btn-secondary">Auto</button>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
+                <div class="box rounded">
+                    <div style="color: rgb(253, 253, 253); " class="center">
+                        <h3>Door</h3>
+                    </div>
+                </div>
+                <br>
                 <div id="door">
                     <img width="200" src="https://image.flaticon.com/icons/svg/876/876853.svg" alt="" class="rounded">
                 </div>
                 <br>
                 <br>
-                <div class="row">
-                    <div class="col-2">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button id="on-door-button" type="button" class="btn btn-secondary">On</button>
-                            <button id="off-door-button" type="button" class="btn btn-secondary">Off</button>
-                            <button id="auto-door-button" type="button" class="btn btn-secondary">Auto</button>
-                        </div>
-
-                    </div>
-                    <div class="col-10">
-                    </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button id="on-door-button" type="button" class="btn btn-secondary">On</button>
+                    <button id="off-door-button" type="button" class="btn btn-secondary">Off</button>
+                    <button id="auto-door-button" type="button" class="btn btn-secondary">Auto</button>
                 </div>
             </div>
         </div>
-
+        <div class="box rounded">
+            <div style="color: rgb(253, 253, 253); " class="center">
+                <h3>Indoor-Light</h3>
+            </div>
+        </div>
+        <br>
+        <div id="light">
+            <img width="200" src="https://image.flaticon.com/icons/png/512/148/148819.png" alt="" class="rounded">
+        </div>
+        <br>
+        <br>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button id="on-light-in-button" type="button" class="btn btn-secondary">On</button>
+            <button id="off-light-in-button" type="button" class="btn btn-secondary">Off</button>
+        </div>
         <br>
         <br>
         <div class="row">
             <div class="col-6">
+                <div class="box rounded">
+                    <div style="color: rgb(253, 253, 253); " class="center">
+                        <h3>Air Conditioner</h3>
+                    </div>
+                </div>
+                <br>
                 <div id="air">
                     <img width="200" src="https://image.flaticon.com/icons/svg/701/701110.svg" alt="" class="rounded">
                 </div>
@@ -71,6 +98,12 @@
                 </div>
             </div>
             <div class="col-6">
+                <div class="box rounded">
+                    <div style="color: rgb(253, 253, 253); " class="center">
+                        <h3>Alarm</h3>
+                    </div>
+                </div>
+                <br>
                 <div id="alarm">
                     <img width="200" src="https://image.flaticon.com/icons/svg/883/883345.svg" alt="" class="rounded">
                 </div>
@@ -81,26 +114,25 @@
                     <button id="off-alarm-button" type="button" class="btn btn-secondary">Off</button>
                 </div>
             </div>
-
         </div>
-
         <br>
         <br>
-        <div class="minititle alert alert-primary" role="alert">
-            <h3>Light</h3>
-        </div>
-
+        <div class="box rounded">
+                <div style="color: rgb(253, 253, 253); " class="center">
+                    <h3>Light</h3>
+                </div>
+            </div>
+            <br>
         <div class="progress center light-graph">
             <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
                 aria-valuemax="100" style="width: 70% ">70</div>
         </div>
-
         <br>
         <br>
-
-        <div id="chartTemperature" style="height: 300px; width: 100%;"></div>
+        <div id="chartTemperaturea" style="height: 300px; width: 100%;"></div>
+        <div id="chartTemperatureb" style="height: 300px; width: 100%;"></div>
+        <div id="chartTemperaturec" style="height: 300px; width: 100%;"></div>
     </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js "></script>
@@ -111,5 +143,4 @@
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="./app.js "></script>
 </body>
-
 </html>
