@@ -23,45 +23,62 @@
     <div class="container">
         <div class="row">
             <div class="col-6 ">
-                <div class="alert alert-info light-frame" role="alert">
-                    <h3>Light</h3>
+                <div id="light">
+                    <img width="200" src="https://www.flaticon.com/premium-icon/icons/svg/595/595085.svg" alt="" class="rounded">
                 </div>
+                <br>
+                <br>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-secondary">On</button>
-                    <button type="button" class="btn btn-secondary">Off</button>
+                    <button id="on-light-button" type="button" class="btn btn-secondary">On</button>
+                    <button id="off-light-button" type="button" class="btn btn-secondary">Off</button>
                     <button type="button" class="btn btn-secondary">Auto</button>
                 </div>
             </div>
             <div class="col-6">
-                <div class="alert alert-info light-frame" role="alert">
-                    <h3>Door</h3>
+                <div id="door">
+                    <img width="200" src="https://image.flaticon.com/icons/svg/876/876853.svg" alt="" class="rounded">
                 </div>
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-secondary">On</button>
-                    <button type="button" class="btn btn-secondary">Off</button>
-                    <button type="button" class="btn btn-secondary">Auto</button>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-2">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button id="on-door-button" type="button" class="btn btn-secondary">On</button>
+                            <button id="off-door-button" type="button" class="btn btn-secondary">Off</button>
+                            <button type="button" class="btn btn-secondary">Auto</button>
+                        </div>
+
+                    </div>
+                    <div class="col-10">
+                    </div>
                 </div>
             </div>
         </div>
-        <br><br>
+
+        <br>
+        <br>
         <div class="row">
             <div class="col-6">
-                    <div class="alert alert-info air-frame" role="alert">
-                            <h3>Air conditioner</h3>
-                        </div>
+                <div id="air">
+                    <img width="200" src="https://image.flaticon.com/icons/svg/701/701110.svg" alt="" class="rounded">
+                </div>
+                <br>
+                <br>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-secondary">On</button>
-                    <button type="button" class="btn btn-secondary">Off</button>
+                    <button id="on-air-button" type="button" class="btn btn-secondary">On</button>
+                    <button id="off-air-button" type="button" class="btn btn-secondary">Off</button>
                     <button type="button" class="btn btn-secondary">Auto</button>
                 </div>
             </div>
             <div class="col-6">
-                    <div class="alert alert-info light-frame" role="alert">
-                            <h3>Beep</h3>
-                        </div>
+                <div id="alarm">
+                    <img width="200" src="https://image.flaticon.com/icons/svg/883/883345.svg" alt="" class="rounded">
+                </div>
+                <br>
+                <br>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-secondary">On</button>
-                    <button type="button" class="btn btn-secondary">Off</button>
+                    <button id="on-alarm-button" type="button" class="btn btn-secondary">On</button>
+                    <button id="off-alarm-button" type="button" class="btn btn-secondary">Off</button>
                 </div>
             </div>
 
@@ -72,10 +89,17 @@
         <div class="minititle alert alert-primary" role="alert">
             <h3>Light</h3>
         </div>
-        <div class="progress center">
-            <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                aria-valuemax="100" style="width: 70%">70</div>
+        <div class="row">
+            <div class="col-4">
+                <div class="progress center light-graph">
+                    <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                        aria-valuemax="100" style="width: 70% ">70</div>
+                </div>
+            </div>
+            <div class="col-8"></div>
         </div>
+        <br>
+        <br>
     </div>
 
     <!-- Optional JavaScript -->
