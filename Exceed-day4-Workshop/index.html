@@ -31,7 +31,7 @@
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <button id="on-light-button" type="button" class="btn btn-secondary">On</button>
                     <button id="off-light-button" type="button" class="btn btn-secondary">Off</button>
-                    <button type="button" class="btn btn-secondary">Auto</button>
+                    <button id="auto-light-button" type="button" class="btn btn-secondary">Auto</button>
                 </div>
             </div>
             <div class="col-6">
@@ -45,7 +45,7 @@
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <button id="on-door-button" type="button" class="btn btn-secondary">On</button>
                             <button id="off-door-button" type="button" class="btn btn-secondary">Off</button>
-                            <button type="button" class="btn btn-secondary">Auto</button>
+                            <button id="auto-door-button" type="button" class="btn btn-secondary">Auto</button>
                         </div>
 
                     </div>
@@ -67,7 +67,7 @@
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <button id="on-air-button" type="button" class="btn btn-secondary">On</button>
                     <button id="off-air-button" type="button" class="btn btn-secondary">Off</button>
-                    <button type="button" class="btn btn-secondary">Auto</button>
+                    <button id="auto-air-button" type="button" class="btn btn-secondary">Auto</button>
                 </div>
             </div>
             <div class="col-6">
@@ -97,6 +97,8 @@
 
         <br>
         <br>
+
+        <div id="chartTemperature" style="height: 300px; width: 100%;"></div>
     </div>
 
     <!-- Optional JavaScript -->
@@ -106,6 +108,7 @@
         crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js " integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em "
         crossorigin="anonymous "></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="./app.js "></script>
 </body>
 
