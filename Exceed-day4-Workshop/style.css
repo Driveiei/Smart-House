@@ -1,0 +1,13 @@
+.box{
+    width: 900px;
+    height: 500px;
+    margin: auto;
+    border: 2px solid #73AD21;
+    overflow-y: scroll;
+}
+.title{
+    text-align: center;
+}
+.button{
+    margin: 40px;
+}
