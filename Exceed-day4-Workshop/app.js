@@ -1,13 +1,43 @@
-let x = 0;
+let temperature = 0;
+let humid = 0;
+let light = 0;
 $(function () {
     //dynamic chart temparature
     setInterval(function () {
         $.ajax({
             type: "GET",
-            url: "http://ecourse.cpe.ku.ac.th:1515/api/odinpalm-outside_light/view",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/odinpalm-temp/view",
             dataType: "text",
             success: function (response) {
-                x = parseInt(response);
+                temperature = parseInt(response);
+            },
+            fail: function (response) {
+                console.log(response)
+            }
+        });
+    }, 1000)
+
+    setInterval(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/odinpalm-humid/view",
+            dataType: "text",
+            success: function (response) {
+                humid = parseInt(response);
+            },
+            fail: function (response) {
+                console.log(response)
+            }
+        });
+    }, 1000)
+
+    setInterval(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/odinpalm-light_status/view",
+            dataType: "text",
+            success: function (response) {
+                light = parseInt(response);
             },
             fail: function (response) {
                 console.log(response)
@@ -71,7 +101,7 @@ $(function () {
     $('#off-light-in-button').on('click', function () {
         $.ajax({
             type: "POST",
-            url: "http://ecourse.cpe.ku.ac.th:1515/api/odinpalm-outside_light/set/",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/odinpalm-inside_light/set/",
             data: {
                 value: 1
             },
@@ -88,7 +118,7 @@ $(function () {
     $('#on-light-in-button').on('click', function () {
         $.ajax({
             type: "POST",
-            url: "http://ecourse.cpe.ku.ac.th:1515/api/odinpalm-outside_light/set/",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/odinpalm-inside_light/set/",
             data: {
                 value: 0
             },
@@ -250,9 +280,9 @@ $(function () {
 window.onload = function () {
 
     var dps = []; // dataPoints
-    var chart = new CanvasJS.Chart("chartTemperaturea", {
+    var chart = new CanvasJS.Chart("chartTemperature", {
         title: {
-            text: "Temperature Data"
+            text: "Temperature"
         },
         axisY: {
             includeZero: false
@@ -273,7 +303,7 @@ window.onload = function () {
         count = count || 1;
 
         for (var j = 0; j < count; j++) {
-            yVal = x;
+            yVal = temperature;
             dps.push({
                 x: xVal,
                 y: yVal
@@ -291,4 +321,87 @@ window.onload = function () {
     updateChart(dataLength);
     setInterval(function () { updateChart() }, updateInterval);
 
+    var dpsTwo = []; // dataPoints
+    var chartTwo = new CanvasJS.Chart("chartHumidity", {
+        title: {
+            text: "Humidity"
+        },
+        axisY: {
+            includeZero: false
+        },
+        data: [{
+            type: "line",
+            dataPoints: dpsTwo
+        }]
+    });
+
+    var xValTwo = 0;
+    var yValTwo = 0;
+    var updateIntervalTwo = 1000;
+    var dataLengthTwo = 20; // number of dataPoints visible at any point
+
+    var updateChartTwo = function (countThree) {
+
+        countThree = countThree || 1;
+
+        for (var j = 0; j < countThree; j++) {
+            yValTwo = humid;
+            dpsTwo.push({
+                x: xValTwo,
+                y: yValTwo
+            });
+            xValTwo++;
+        }
+
+        if (dpsTwo.length > dataLength) {
+            dpsTwo.shift();
+        }
+
+        chartTwo.render();
+    };
+
+    updateChartTwo(dataLengthTwo);
+    setInterval(function () { updateChartTwo() }, updateIntervalTwo);
+
+    var dpsThree = []; // dataPoints
+    var chartThree = new CanvasJS.Chart("chartLight", {
+        title: {
+            text: "Light Intensity"
+        },
+        axisY: {
+            includeZero: false
+        },
+        data: [{
+            type: "line",
+            dataPoints: dpsThree
+        }]
+    });
+
+    var xValThree = 0;
+    var yValThree = 0;
+    var updateIntervalThree = 1000;
+    var dataLengthThree = 20; // number of dataPoints visible at any point
+
+    var updateChartThree = function (countThree) {
+
+        countThree = countThree || 1;
+
+        for (var j = 0; j < countThree; j++) {
+            yValThree = light;
+            dpsThree.push({
+                x: xValThree,
+                y: yValThree
+            });
+            xValThree++;
+        }
+
+        if (dpsThree.length > dataLength) {
+            dpsThree.shift();
+        }
+
+        chartThree.render();
+    };
+
+    updateChartThree(dataLengthThree);
+    setInterval(function () { updateChartThree() }, updateIntervalThree);
 }
